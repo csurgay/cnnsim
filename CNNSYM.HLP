@@ -1,0 +1,310 @@
+
+Mulilayer Cellular Neural Network Simulation  -- Help file
+
+Czopf èkos, Csurgay PÇter  Tech.Univ.of Budapest - Informatics 1991.
+
+
+
+`Main`
+
+
+   Multilayer Cellular Neural Network Simulator
+	Technical University of Budapest
+	          Informatics
+
+		  Czopf  èkos
+		 Csurgay PÇter
+
+		     1991.
+
+         Some ~Information~ about the
+    ~Cellular~ ~Neural~ Network Simulator.
+|
+`Cellular`
+
+	Cellular
+
+    Every ~Neuron~ of every ~Layer~s is connected
+    only several other neurons of other layers.
+    This cellular ~Connection~s are described
+    by the ~Template~s.
+|
+`Neural`
+
+	Neural
+
+    This name regars to the construction of the
+    human brain, but these nets are only
+    poor representations of it.
+|
+`Layer`
+
+	Layer
+
+    One layer consists of a sum of ~Neuron~s,
+    and the ~Connection~s to the other layers'
+    neurons, which connections are described
+    by the ~Template~s.
+|
+`Connection`
+
+	Connection
+
+    The connectios weight between too ~Neuron~
+    is the measure of one's influence
+    to the other.
+
+|
+`Information`
+
+  More Information
+
+  This program is a simulator of a large
+  group of ~Cellular~ ~Neural~ nets. You can
+  define all kind of ~Input~s and all kind
+  of ~Template~s. You may use 8 layers to
+  simulate.
+
+  If you have any ~problems~...
+
+|
+`problems`
+
+  If you have any problems with these
+  simulator, please contact
+
+       Peter Csurgay
+       H-1215, Budapest,
+       Tanacshaz utca 17.
+
+       Telephone: (36)-1-277-5616
+
+|
+`iins`
+
+  Input is not set
+
+  You haven't loaded any ~Input~ file.
+  It's possible that you've tried to
+  load a ~Template~ instead of an Input
+  file,or the format of the Input file
+  was not correct.
+|
+`tins`
+
+  Template is not set
+
+  You haven't loaded any ~Template~ file.
+  It's possible that you've tried to load
+  an Input instead of a Template file, or
+  the format of the Template file was
+  not correct.
+|
+`nini`
+
+  Net is not initalized
+
+  Before the start of the iteration
+  you have to initalize the net with
+  Options / Initalize net.This part
+  of the programm sets the default
+  values in the whole net.
+|
+`ncif`
+
+  Not correct Input format
+
+  The ~Input~ file has illegal characters.
+  It's possible that you've tried to
+  load a ~Template~ instead of an Input
+  file.
+
+|
+`nctf`
+
+  Not correct Template format
+
+  The ~Template~ file has illegal characters.
+  It's possible that you've tried to load
+  an ~Input~ instead of a Template file.
+
+|
+`icsa`
+
+  I can't show anything
+
+  There's no ~Input~ in the input layer.
+|
+`Input`
+
+  Input
+
+  The input format is: the size ( n by m ),
+  and the (-1..+1) float values.
+
+  3 4
+  -1  -0.75  -0.5  -0.25
+   0   0.25   0.5   0.75
+   1  -1      1    -1
+
+|
+`Template`
+
+  Template
+
+  Template file contains the template ~Radius~,
+  the ~Current~, the max ~Delay~, and the
+  connection weights between the ~Layer~s:
+
+  Neighbourhood:  1
+  Current:	  -1.9
+  Layers:	  4
+  Delay:	  1
+
+  And the ~A~ and ~D~ templates.
+|
+`A`
+
+  The A template
+
+   A 2 3
+  0 -1	0
+  0  2	0
+  0  1	0
+
+  The ~Connection~ weights from the
+  second ~Layer~ to the third.
+|
+`D`
+
+  The D template
+
+   D 4 2 3
+  0 -1	0
+  0  2	0
+  0  1	0
+
+  The ~Connection~ weights from the
+  second Layer's four-step-delayed
+  output to the third ~Layer~.
+|
+`Current`
+
+  Current
+
+  Source of current is one of the elements
+  of the ~Neuron~s,but this element is not
+  a standard one,it is not needed.
+  When you don't want to use it set this
+  value to 0.
+|
+`Delay`
+
+  Delay
+
+  Delay is the variable that defines
+  which states of the net you can use.
+  For example : delay = 3
+  You can use templates that iterate
+  with the outputs of the net defined
+  1,2,3 time steps earlier.
+|
+`Initialize net`
+
+  Initialize net
+
+	After loading the ~Input~ and ~Template~
+  files, you must initialize the net.
+|
+`rcri`
+
+  This message means that you have to load
+  the input again,because the algorithm
+  makes a frame around the layers,and the
+  width of it is the template ~Radius~.
+  This frame is to symbolize the environ-
+  ment of the net.Therefore when the radius
+  is changed,the whole net has to be changed.
+|
+`Radius`
+
+  The template Radius
+
+  The template Radius defines a 'circle'
+  arond the neurons.The state of any
+  ~Neuron~ can be changed by other neurons,
+  which are in the circle.
+
+|
+`liz`
+
+  This message means that you have set a
+  wrong value of layers.You can not simu-
+  late a net that hasn't got layers at all !
+|
+`riz`
+
+  This message means that you have set a
+  wrong value of ~Resistance~.You can not
+  simulate ~Neuron~s without resistance.
+|
+`Resistance`
+
+  Each neuron contains standard elements:
+
+	      Resistance
+	      ~Capacity~
+	      Source of ~Current~
+	      Source of Voltage
+
+|
+`Capacity`
+
+  Each neuron contains standard elements:
+
+	      ~Resistance~
+	      Capacity
+	      Source of ~Current~
+	      Source of Voltage
+
+|
+`Neuron`
+
+  Neuron means the smallest part of the
+  neural net. Each neuron contains standard
+  elements:
+
+	      ~Resistance~
+	      ~Capacity~
+	      Source of ~Current~
+	      Source of Voltage
+
+|
+`ciz`
+
+  This message means that you have set a
+  wrong value of ~Capacity~.You can not
+  simulate ~Neuron~s without capacity.
+|
+`tsiz`
+
+  Time step is a variable that defines
+  the time between two simulation steps.
+  If this value could be zero,that would
+  mean that there is no difference bet-
+  ween the states of each ~Neuron~.
+|
+`nmsn`
+
+  No memory to set the net
+
+  You must change the parameters,perhaps
+  the value of layers or the value of
+  delay is too large. But if you really
+  want to see this net,then you have to
+  quit the programm,and remove some of
+  the resident programms (if exist any).
+|
+
+€
+

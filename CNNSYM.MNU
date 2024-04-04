@@ -1,0 +1,423 @@
+
+Multilayer Cellular Neural Network Simulation  --  Menu file
+
+Czopf èkos, Csurgay PÇter  Tech.Univ.of Budapest - Informatics 1991.
+
+
+
+delay:4;
+
+showfreememory:off;
+_color:2,0;
+^
+showshiftstatus:on;
+_color:3,0;
+^
+helpwindow:
+_color:7,0,1,4,7,4,15;
+^
+loadwindow:
+_color:7,0,1,0,4,3,15;
+^
+keybarwindow:
+_color:7,0,0,0,4,0,0;
+^
+stringcolor:7,0,1,4,7,4,15;
+
+main:menu:File,Layers,Options,Run,View,Quit,CNN SIM 1991;
+_living:6;
+_before:11;
+_help:Main;
+^
+       CNN SIM 1991:remark;
+       _optxpos:62;
+       _hotlight:5,7;
+       ^
+       File:menu:Input,Template;
+       _help:Main;
+       _winwidth:25;
+       ^
+       		Template:load:4;
+       		_help:Template;
+       		_name:Template;
+       		_mask:ctl\*.tem;
+       		_after:4;
+	       ^
+	       Input:load:5;
+	       _help:Input;
+	       _name:Input;
+	       _mask:ipl\*.cni;
+	       _after:2;
+	       ^
+       Layers:menu:Number of layers,initial Values,Initialize net,Display layers,configure Windows;
+       _help:Layer;
+       _winwidth:22;
+       ^
+	       Number of layers:string:0;
+	       _name:Number of layers;
+	       _help:Main;
+	       _stringmaxwidth:2;
+	       _after:5;
+	       ^
+	       initial Values:menu:Layer 1,Layer 2,Layer 3,Layer 4,Layer 5,Layer 6,Layer 7,Layer 8;
+	       _name:Initial values;
+	       _winwidth:17;
+	       ^
+		       Layer 1:choice:-1,+1,Input,inVerse;
+		       _variable:27;
+				 _hotkey:1; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 2:trimmer:-1,+1,Input,Inverse;
+		       _variable:28;
+				 _hotkey:2; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 3:trimmer:-1,+1,Input,Inverse;
+		       _variable:29;
+				 _hotkey:3; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 4:trimmer:-1,+1,Input,Inverse;
+		       _variable:30;
+				 _hotkey:4; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 5:trimmer:-1,+1,Input,Inverse;
+		       _variable:31;
+				 _hotkey:5; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 6:trimmer:-1,+1,Input,Inverse;
+		       _variable:32;
+				 _hotkey:6; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 7:trimmer:-1,+1,Input,Inverse;
+		       _variable:33;
+				 _hotkey:7; _hotlight:7,7;
+		       _after:5;
+		       ^
+		       Layer 8:trimmer:-1,+1,Input,Inverse;
+		       _variable:34;
+				 _hotkey:8; _hotlight:7,7;
+		       _after:5;
+		       ^
+	       Initialize net:function:7;
+	       _help:Initialize net;
+	       _after:3;
+	       ^
+	       Display layers:menu:Input layer,1.layer,2.layer,3.layer,4.layer,5.layer,6.layer,7.layer,8.layer;
+	       _name:Display layers;
+	       _help:Which layers;
+	       _winwidth:20;
+	       ^
+		       Input layer:trimmer:Off,On;
+		       _variable:3;
+		       ^
+		       1.layer:trimmer:Off,On;
+				 _hotkey:1; _hotlight:1,1;
+		       _variable:4;
+		       ^
+		       2.layer:trimmer:Off,On;
+				 _hotkey:2; _hotlight:1,1;
+		       _variable:5;
+		       ^
+		       3.layer:trimmer:Off,On;
+				 _hotkey:3; _hotlight:1,1;
+		       _variable:6;
+		       ^
+		       4.layer:trimmer:Off,On;
+				 _hotkey:4; _hotlight:1,1;
+		       _variable:7;
+		       ^
+		       5.layer:trimmer:Off,On;
+				 _hotkey:5; _hotlight:1,1;
+		       _variable:8;
+		       ^
+		       6.layer:trimmer:Off,On;
+				 _hotkey:6; _hotlight:1,1;
+		       _variable:9;
+		       ^
+		       7.layer:trimmer:Off,On;
+				 _hotkey:7; _hotlight:1,1;
+		       _variable:10;
+		       ^
+		       8.layer:trimmer:Off,On;
+				 _hotkey:8; _hotlight:1,1;
+		       _variable:11;
+		       ^
+	       configure Windows:function:9;
+	       _help:configure Windows;
+	       _inmain;
+			 _keybar:1;
+	       ^
+       Options:menu:Running mode,Current,Parameters,Status window;
+       _help:Main;
+       _winwidth:29;
+       ^
+	       Running mode:choice:Step by step,Continuous;
+	       _winxpos:34;
+	       _help:Running mode;
+	       _variable:0;
+	       _after:3;
+	       ^
+	       Current:string:6;
+	       _help:Current;
+	       _name:Current;
+	       _stringmaxwidth:6;
+	       _after:5;
+	       ^
+	       Parameters:menu:Resistance,cApacity,Signum (1.000),Offset (0.000),Time step;
+	       _help:Main;
+	       _winwidth:24;
+	       ^
+		       Resistance:string:1;
+		       _help:Resistance;
+		       _name:Resistance;
+		       _stringmaxwidth:6;
+		       _after:5;
+		       ^
+		       cApacity:string:2;
+		       _help:Capacity;
+		       _name:Capacity;
+		       _stringmaxwidth:6;
+		       _after:5;
+		       ^
+		       Signum (1.000):remark;
+		       _hotlight:0,0;
+		       ^
+		       Offset (0.000):remark;
+		       _hotlight:0,0;
+		       ^
+		       Time step:string:3;
+		       _help:Time step;
+		       _name:Time step;
+		       _stringmaxwidth:6;
+		       _after:5;
+		       ^
+	       Status window:menu:Indicators,Move window;
+	       _help:Status window;
+	       ^
+		       Indicators:menu:
+			       Input file,
+			       Template file,
+			       Net state,
+			       Windows state,
+			       running Mode,
+			       no. of Layers,
+			       Size of layers,
+			       templ Radius,
+			       max Delay,
+			       Current,
+			       rEsistance,
+			       cApacity,
+			       time steP,
+			       iteratiOn step,
+			       Free memory;
+		       _winwidth:21;
+		       _help:Indicators;
+		       ^
+			       Input file:trimmer:Off,On;
+			       _variable:12;
+			       _after:3;
+			       ^
+			       Template file:trimmer:Off,On;
+			       _variable:13;
+			       _after:3;
+			       ^
+			       Net state:trimmer:Off,On;
+			       _variable:14;
+			       _after:3;
+			       ^
+			       Windows state:trimmer:Off,On;
+			       _variable:15;
+			       _after:3;
+			       ^
+			       running Mode:trimmer:Off,On;
+			       _variable:16;
+			       _after:3;
+			       ^
+			       no. of Layers:trimmer:Off,On;
+			       _variable:17;
+			       _after:3;
+			       ^
+			       Size of layers:trimmer:Off,On;
+			       _variable:18;
+			       _after:3;
+			       ^
+			       templ Radius:trimmer:Off,On;
+			       _variable:19;
+			       _after:3;
+			       ^
+			       max Delay:trimmer:Off,On;
+			       _after:3;
+			       _variable:20;
+			       ^
+			       Current:trimmer:Off,On;
+			       _after:3;
+			       _variable:21;
+			       ^
+			       rEsistance:trimmer:Off,On;
+			       _variable:22;
+			       _after:3;
+			       ^
+			       cApacity:trimmer:Off,On;
+			       _variable:23;
+			       _after:3;
+			       ^
+			       time steP:trimmer:Off,On;
+			       _variable:24;
+			       _after:3;
+			       ^
+			       iteratiOn step:trimmer:Off,On;
+			       _variable:25;
+			       _after:3;
+			       ^
+			       Free memory:trimmer:Off,On;
+			       _variable:26;
+			       _after:3;
+			       ^
+		       Move window:function:6;
+		       _help:Move window;
+		       _inmain;
+				 _keybar:2;
+		       ^
+       Run:function:10;
+       _help:Run;
+       _delight;
+       ^
+       View:function:8;
+       _help:View;
+       ^
+	Quit:quit;
+       _help:Quit;
+       ^
+
+macros:
+   a-t:F10,t;
+   a-o:F10,o;
+   a-r:F10,r;
+   a-p:F10,p;
+   a-v:F10,v;
+   a-q:F10,q;
+   F2:F10,f,delay,"iipl\*.cni",enter,i,right,enter,down,
+      "tctl\*.tem",enter,c,right,right,enter,
+      F10,"ors",F10,
+      "lv1i",esc,down,i,down,down,w,nodelay,home,pgup,right,down,enter,
+      home,pgdn,right,right,right,right,right,right,up,
+      enter,F10,right,right,
+      nodelay,"rrrrrrrrrrrrrrrrrrrrrrrrrrrrr",delay,F10,
+      "fi",enter,i,right,right,enter,down,t,enter,f,enter,F10,
+      "lv1",up,enter,esc,i,w,nodelay,home,pgup,enter,pgup,home,
+      right,right,right,right,right,right,right,right,right,right,right,
+      right,right,right,right,rigth,right,right,right,right,
+      delay,enter,right,right,
+      nodelay,"rrrrrrrrrrrrrr",delay,left,left,l,i,esc,right,right,right,enter,
+	left,nodelay,"rrrrrrrrrrrrrr",delay,esc,
+	left,left,left,f,t,enter,a,enter,i,enter,
+	c,right,enter,esc,right,enter,"v1i22334",esc,"id2345",
+	esc,w,home,pgup,enter,nodelay,
+	home,down,down,enter,home,down,down,
+      right,right,right,right,rigth,right,right,right,right,right,right,
+      right,right,right,right,rigth,right,right,right,enter,
+	down,down,right,right,right,enter,pgup,right,right,right,enter,
+	pgup,home,delay,
+      right,right,right,right,rigth,right,right,right,right,right,right,
+      right,right,right,right,rigth,right,right,right,enter,nodelay,
+	"rrrrrrrrrrrrrrrrrrrr",delay,"li",esc,v,nodelay,
+	"rrrrrrrrrrrrrrrrrrrr";
+
+
+   F3:F10,"li";
+   F4:F10,"osi";
+   F5:F10,"lv";
+   F6:F10,delay,"fi",esc,down,t,esc,esc,right,l,n,esc,down,v,delay,esc,
+      down,i,down,d,delay,esc,down,esc,right,o,r,delay,esc,down,delay,
+      down,p,down,down,down,down,esc,down,s,i,delay,esc,down,delay,esc,
+      esc,right,right,right,nodelay;
+   endmacro;
+^
+
+keybar:0;
+	normal:F1-Help,F2-Demo,F3-Net init,F4-Status,F5-Layers,F10-Menu;
+	alt:F1-Last help;
+
+keybar:1;
+	normal:Left,Right,Up,Down,- move,Home,End,Pgup,Pgdn,- jump,Enter - OK;
+		Left: _hotlight:1,4; _hotkey:left;
+		^
+		Right: _hotlight:1,5; _optxpos:6; _hotkey:right;
+		^
+		Up: _hotlight:1,2; _optxpos:12; _hotkey:up;
+		^
+		Down: _hotlight:1,4; _optxpos:15; _hotkey:down;
+		^
+		- move: _hotlight:0,0; _optxpos:20; _hotkey:nokey;
+		^
+		Home: _hotlight:1,4; _optxpos:29; _hotkey:home;
+		^
+		End: _hotlight:1,3; _optxpos:34; _hotkey:end;
+		^
+		Pgup: _hotlight:1,4; _optxpos:38; _hotkey:pgup;
+		^
+		Pgdn: _hotlight:1,4; _optxpos:43; _hotkey:pgdn;
+		^
+		- jump: _hotlight:0,0; _optxpos:48; _hotkey:nokey;
+		^
+		Enter - OK: _hotlight:1,5; _optxpos:57; _hotkey:enter;
+		^
+	shift:Left,Right,Up,Down,- scroll;
+		Left: _hotlight:1,4; _hotkey:left;
+		^
+		Right: _hotlight:1,5; hotkey:right;
+		^
+		Up: _hotlight:1,2; _hotkey:up;
+		^
+		Down: _hotlight:1,4; _hotkey:down;
+		^
+		- scroll: _hotlight:0,0; _hotkey:nokey;
+		^
+	ctrl:Left,Pgup,Pgdn,Right,- resize the window;
+		Left: _hotlight:1,4; _hotkey:left;
+		^
+		Pgup: _hotlight:1,4; _hotkey:pgup;
+		^
+		Pgdn: _hotlight:1,4; _hotkey:pgdn;
+		^
+		Right: _hotlight:1,5; _hotkey:right;
+		^
+		- resize the window: _hotlight:0,0; _hotkey:nokey;
+		^
+
+keybar:2;
+	normal:Left,Right,Up,Down,- move,Home,End,Pgup,Pgdn,- jump,Enter - OK,Esc;
+		Left:
+		_hotlight:1,4; _hotkey:left;
+		^
+		Right:
+		_hotlight:1,5; _optxpos:6; _hotkey:right;
+		^
+		Up: _hotlight:1,2; _optxpos:12; _hotkey:up;
+		^
+		Down: _hotlight:1,4; _optxpos:15; _hotkey:down;
+		^
+		- move: _hotlight:0,0; _optxpos:20; _hotkey:nokey;
+		^
+		Home: _hotlight:1,4; _optxpos:29; _hotkey:home;
+		^
+		End: _hotlight:1,3; _optxpos:34; _hotkey:end;
+		^
+		Pgup: _hotlight:1,4; _optxpos:38; _hotkey:pgup;
+		^
+		Pgdn: _hotlight:1,4; _optxpos:43; _hotkey:pgdn;
+		^
+		- jump: _hotlight:0,0; _optxpos:48; _hotkey:nokey;
+		^
+		Enter - OK: _hotlight:1,5; _optxpos:57; _hotkey:enter;
+		^
+		Esc: _hotlight:1,3; _optxpos:70; _hotkey:esc;
+		^
+
+|
+

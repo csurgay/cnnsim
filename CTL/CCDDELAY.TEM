@@ -1,0 +1,26 @@
+NEIGHBORHOOD:1
+
+FEEDBACK:
+0.0  0.0  0.0
+1.0  2.0  -1.0
+0.0  0.0  0.0
+
+current:-1
+
+CONTROL:
+	0 0 0
+	0 0 0
+	0 0 0
+
+DELAY:3
+
+DELAYED_feedback:
+		 0  1  0
+		 0  1  0
+		 0  1  0
+
+DELAYED_control:
+		0 0 0
+		0 0 0
+		0 0 0
+
